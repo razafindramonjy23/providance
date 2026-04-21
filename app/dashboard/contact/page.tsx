@@ -31,7 +31,7 @@ export default function ContactPage() {
         {/* Info */}
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
           <h2 className="font-display text-xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>
-            International House Johannesburg
+            Providence Academy Madagascar
           </h2>
           <div className="flex flex-col gap-4">
             {[
