@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, LogOut, ChevronDown, Shield, ShieldCheck } from 'lucide-react'
+import Image from 'next/image'
 import { ThemeToggle } from '../ui/ThemeToggle'
 import { useAuth } from '@/lib/auth'
 
@@ -34,13 +35,20 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-primary)]/80 backdrop-blur-xl border-b border-[var(--border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
-          <Link href="/dashboard" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center">
-              <span className="text-navy font-bold text-sm font-display">CC</span>
+          <Link href="/dashboard" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-[var(--border)] group-hover:ring-gold transition-all duration-200">
+              <Image
+                src="/logo.jpeg"
+                alt="Providence Academy"
+                width={36}
+                height={36}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <span className="font-display font-bold text-xl text-[var(--text-primary)] group-hover:text-gold transition-colors">
-              Click<span className="text-gold">-</span>Click
+            <span className="font-display font-bold text-lg text-[var(--text-primary)] group-hover:text-gold transition-colors leading-tight hidden sm:block">
+              Providence
             </span>
           </Link>
 
@@ -50,7 +58,6 @@ export function Navbar() {
               Accueil
             </Link>
 
-            {/* Levels dropdown */}
             <div className="relative" onMouseEnter={() => setLevelsOpen(true)} onMouseLeave={() => setLevelsOpen(false)}>
               <button className="flex items-center gap-1 text-sm text-[var(--text-secondary)] hover:text-gold transition-colors">
                 Niveaux <ChevronDown size={14} className={`transition-transform ${levelsOpen ? 'rotate-180' : ''}`} />
@@ -101,7 +108,6 @@ export function Navbar() {
               Contact
             </Link>
 
-            {/* Admin link */}
             {isAdmin && (
               <Link href="/dashboard/admin"
                 className="flex items-center gap-1.5 text-sm transition-colors font-medium"
@@ -116,23 +122,17 @@ export function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
-
             {user && (
               <div className="hidden md:flex items-center gap-3">
                 <div className="text-right">
                   <p className="text-xs text-[var(--text-muted)]">{user.level}</p>
                   <p className="text-sm font-medium text-[var(--text-primary)]">{user.name}</p>
                 </div>
-                <button
-                  onClick={logout}
-                  className="p-2 rounded-lg text-[var(--text-muted)] hover:text-gold hover:bg-gold/10 transition-colors"
-                >
+                <button onClick={logout} className="p-2 rounded-lg text-[var(--text-muted)] hover:text-gold hover:bg-gold/10 transition-colors">
                   <LogOut size={16} />
                 </button>
               </div>
             )}
-
-            {/* Mobile menu button */}
             <button
               className="md:hidden p-2 rounded-lg text-[var(--text-secondary)] hover:text-gold transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -153,10 +153,18 @@ export function Navbar() {
             className="md:hidden border-t border-[var(--border)] bg-[var(--bg-card)]"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
+              <div className="flex items-center gap-2 px-3 py-2 mb-2">
+                <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-[var(--border)]">
+                  <Image src="/logo.jpeg" alt="Providence Academy" width={32} height={32} className="w-full h-full object-cover" />
+                </div>
+                <span className="font-display font-bold text-sm" style={{ color: 'var(--text-primary)' }}>
+                  Click<span className="text-gold">-</span>Click
+                </span>
+              </div>
+              <div className="gold-divider mb-2" />
               <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Niveaux</p>
               {levels.map(item => (
-                <Link key={item.href} href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-gold transition-colors rounded-lg hover:bg-gold/10"
                 >
                   <span className="w-2 h-2 rounded-full" style={{ background: item.color }} />
@@ -167,8 +175,7 @@ export function Navbar() {
               <div className="gold-divider my-2" />
               <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Spécialisés</p>
               {specialCourses.map(item => (
-                <Link key={item.href} href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
                   className="px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-gold transition-colors rounded-lg hover:bg-gold/10"
                 >
                   {item.name}

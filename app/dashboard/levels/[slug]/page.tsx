@@ -651,7 +651,7 @@ export default function LevelPage() {
             className="hover:text-gold transition-colors" style={{ color: 'rgb(173,145,45)' }}>
             Click-Click
           </a>{' '}
-          · International House Johannesburg
+          · Providance
         </p>
       </div>
     </div>

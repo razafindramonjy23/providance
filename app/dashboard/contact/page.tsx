@@ -35,9 +35,9 @@ export default function ContactPage() {
           </h2>
           <div className="flex flex-col gap-4">
             {[
-              { icon: MapPin, label: 'Adresse', value: 'Johannesburg, South Africa', color: '#ef4444' },
-              { icon: Phone, label: 'Téléphone', value: '+27 11 339-1051', color: '#60a5fa' },
-              { icon: Mail, label: 'Email', value: 'info@ihjoburg.co.za', color: 'rgb(173,145,45)' },
+              { icon: MapPin, label: 'Adresse', value: 'Antananarivo, Madagascar', color: '#ef4444' },
+              { icon: Phone, label: 'Téléphone', value: '+261 34 00 000 00', color: '#60a5fa' },
+              { icon: Mail, label: 'Email', value: 'test@gmail.com', color: 'rgb(173,145,45)' },
               { icon: Clock, label: 'Heures', value: 'Lun–Ven : 8h–17h', color: '#4ade80' },
             ].map(item => (
               <div key={item.label} className="flex items-center gap-4 p-4 rounded-xl"
