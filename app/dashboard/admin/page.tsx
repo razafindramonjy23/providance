@@ -7,6 +7,7 @@ import {
   X, Save, AlertCircle, CheckCircle, Search, ChevronDown, KeyRound, Mail
 } from 'lucide-react'
 import { useAuth, UserRole } from '@/lib/auth'
+import type { StoredUser } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
 
 const LEVELS = [
@@ -26,7 +27,7 @@ export default function AdminPage() {
   const { user, getAllUsers, createUser, updateUser, deleteUser } = useAuth()
   const router = useRouter()
 
-  const [users, setUsers] = useState<ReturnType<typeof getAllUsers>>([])
+  const [users, setUsers] = useState<StoredUser[]>([])
   const [search, setSearch] = useState('')
   const [modal, setModal] = useState<ModalMode>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -44,7 +45,10 @@ export default function AdminPage() {
     refreshUsers()
   }, [user])
 
-  const refreshUsers = () => setUsers(getAllUsers())
+  const refreshUsers = async () => {
+    const fetchedUsers = await getAllUsers()
+    setUsers(fetchedUsers)
+  }
 
   const showToast = (type: 'success' | 'error', msg: string) => {
     setToast({ type, msg })
@@ -57,7 +61,7 @@ export default function AdminPage() {
     setModal('create')
   }
 
-  const openEdit = (u: ReturnType<typeof getAllUsers>[0]) => {
+  const openEdit = (u: StoredUser) => {
     setForm({ name: u.name, email: u.email, password: '', role: u.role, level: u.level })
     setEditingId(u.id)
     setModal('edit')
