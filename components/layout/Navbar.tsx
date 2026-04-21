@@ -48,7 +48,7 @@ export function Navbar() {
               />
             </div>
             <span className="font-display font-bold text-lg text-[var(--text-primary)] group-hover:text-gold transition-colors leading-tight hidden sm:block">
-              Providence
+              Providance
             </span>
           </Link>
 
