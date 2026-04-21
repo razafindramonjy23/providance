@@ -206,7 +206,7 @@ export default function DashboardHome() {
       {/* Footer */}
       <div className="mt-16 pt-8 text-center" style={{ borderTop: '1px solid var(--border)' }}>
         <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-          © 2026 International House Johannesburg · Johannesburg, South Africa
+          © 2026 Providence Academy Madagascar
         </p>
       </div>
     </div>

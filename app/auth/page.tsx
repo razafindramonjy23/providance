@@ -54,15 +54,23 @@ function AuthPageInner() {
           style={{ background: 'radial-gradient(circle, rgba(173,145,45,0.08) 0%, transparent 70%)' }}
         />
 
+        {/* ── TOP: Logo Providence Academy ── */}
         <div className="relative z-10 p-12">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gold flex items-center justify-center">
-              <span className="text-navy font-bold font-display">CC</span>
-            </div>
-            <span className="font-display text-2xl font-bold text-white">Click-Click</span>
+            {/* Logo image replaces the old "CC" badge */}
+            <img
+              src="/logo.jpeg"
+              alt="Providence Academy"
+              className="h-12 w-12 rounded-full object-contain bg-white p-0.5"
+              style={{ flexShrink: 0 }}
+            />
+            <span className="font-display text-2xl font-bold text-white">
+              Providence Academy
+            </span>
           </div>
         </div>
 
+        {/* ── MIDDLE: Headline + badges ── */}
         <div className="relative z-10 px-12 py-16">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
             <h1 className="font-display text-5xl font-bold text-white leading-tight mb-6">
@@ -97,14 +105,15 @@ function AuthPageInner() {
           </motion.div>
         </div>
 
+        {/* ── BOTTOM: Copyright ── */}
         <div className="relative z-10 p-12">
           <p className="text-blue-200/40 text-xs">
-            © 2026 International House Johannesburg
+            © 2026 Providence Academy
           </p>
         </div>
       </div>
 
-      {/* Right panel – form */}
+      {/* ── Right panel – form ── */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 relative">
         {/* Theme toggle top-right */}
         <div className="absolute top-6 right-6">
@@ -117,13 +126,16 @@ function AuthPageInner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          {/* Mobile logo */}
+          {/* Mobile logo — replaces old "CC" badge */}
           <div className="lg:hidden flex items-center gap-2 mb-8">
-            <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center">
-              <span className="text-navy font-bold text-sm font-display">CC</span>
-            </div>
+            <img
+              src="/logo.jpeg"
+              alt="Providence Academy"
+              className="h-9 w-9 rounded-full object-contain bg-white p-0.5 border border-gray-200"
+              style={{ flexShrink: 0 }}
+            />
             <span className="font-display text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-              Click-Click
+              Providence Academy
             </span>
           </div>
 
@@ -272,10 +284,10 @@ function AuthPageInner() {
           <div className="mt-6 p-4 rounded-xl border" style={{ borderColor: 'var(--border)', background: 'var(--bg-secondary)' }}>
             <p className="text-xs font-medium mb-2" style={{ color: 'var(--text-muted)' }}>Compte démo :</p>
             <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-              📧 <span className="font-mono">demo@clickclick.com</span>
+              📧 <span className="font-mono">Coucouu</span>
             </p>
             <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>
-              🔑 <span className="font-mono">demo123</span>
+              🔑 <span className="font-mono">Bienvenue</span>
             </p>
           </div>
         </motion.div>
