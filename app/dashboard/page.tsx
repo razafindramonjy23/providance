@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BookOpen, Trophy, Target, Zap, ArrowRight, Globe, Briefcase, Plane, GraduationCap } from 'lucide-react'
 import { useAuth } from '@/lib/auth'
 
+
 const levels = [
   { name: 'Beginner', code: 'A1', color: '#4ade80', desc: 'Pour les débutants complets', href: '/dashboard/levels/beginner', count: 45 },
   { name: 'Elementary', code: 'A2', color: '#60a5fa', desc: 'Bases solides de l\'anglais', href: '/dashboard/levels/elementary', count: 62 },

@@ -3,7 +3,7 @@ import './globals.css'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'Click-Click | English Learning Portal',
+  title: 'Providence | English Learning Portal',
   description: "Plateforme d'apprentissage de l'anglais en ligne",
 }
 

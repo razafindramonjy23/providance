@@ -647,11 +647,11 @@ export default function LevelPage() {
       <div className="mt-12 pt-8 text-center" style={{ borderTop: '1px solid var(--border)' }}>
         <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
           Ressources officielles de{' '}
-          <a href="https://sites.google.com/view/clickclick/home" target="_blank" rel="noopener noreferrer"
+          {/* <a href="https://sites.google.com/view/clickclick/home" target="_blank" rel="noopener noreferrer"
             className="hover:text-gold transition-colors" style={{ color: 'rgb(173,145,45)' }}>
-            Click-Click
-          </a>{' '}
-          · Providence Academy Madagascar
+            
+          </a>{' '} */}
+          Providence Academy Madagascar
         </p>
       </div>
     </div>
